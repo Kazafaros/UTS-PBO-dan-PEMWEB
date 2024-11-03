@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Transaksi</title>
+    <link rel="stylesheet" href="/editT.css">
+</head>
+<body>
+    <h1>Edit Transaksi</h1>
+    
+    <form action="/transactions/edit/<%= transaction.id %>" method="POST">
+        <div>
+            <label for="amount">Jumlah (Rupiah):</label>
+            <input type="number" id="amount" name="amount" required min="1" value="<%= transaction.amount %>">
+        </div>
+        
+        <div>
+            <label for="description">Deskripsi:</label>
+            <input type="text" id="description" name="description" required value="<%= transaction.description %>">
+        </div>
+        
+        <div>
+            <label for="date">Tanggal:</label>
+            <input type="date" id="date" name="date" required value="<%= new Date(transaction.date).toISOString().split('T')[0] %>">
+        </div>
+        
+        <button type="submit">Update Transaksi</button>
+    </form>
+
+    <a href="/transactions">Kembali ke Daftar Transaksi</a>
+</body>
+</html>

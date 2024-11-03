@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tambah Transaksi Baru</title>
+    <link rel="stylesheet" href="/tambah.css">
+</head>
+<body>
+    <h1>Tambah Transaksi Baru</h1>
+    
+    <form action="/transactions/add" method="POST">
+        <div>
+            <label for="amount">Jumlah (Rupiah):</label>
+            <input type="number" id="amount" name="amount" required min="1" placeholder="Contoh: 50000">
+        </div>
+        
+        <div>
+            <label for="description">Deskripsi:</label>
+            <input type="text" id="description" name="description" required placeholder="Deskripsi transaksi">
+        </div>
+        
+        <div>
+            <label for="date">Tanggal:</label>
+            <input type="date" id="date" name="date" required value="<%= new Date().toISOString().split('T')[0] %>">
+        </div>
+        
+        <button type="submit">Tambah Transaksi</button>
+    </form>
+
+    
+    <a href="/transactions">Kembali ke Daftar Transaksi</a>
+</body>
+</html>

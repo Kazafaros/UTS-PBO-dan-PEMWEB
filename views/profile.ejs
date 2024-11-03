@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/profile.css">
+</head>
+<body>
+    <header>
+        <h1>Profil Anda</h1>
+    </header>
+
+    <div class="profile-container">
+        <img class="profile-picture" src="https://picsum.photos/200" alt="Profile Picture">
+        <div class="profile-info">
+            <h2><%= user.username %></h2>
+            <p><%= user.email %></p>
+        </div>
+        <a href="/profile/edit" class="edit-link">Edit Profil</a>
+    </div>
+</body>
+</html>
+
+

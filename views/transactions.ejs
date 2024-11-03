@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Transaksi</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Daftar Transaksi Anda</h1>
+    
+    <!-- Form untuk memilih bulan dan tahun -->
+    <form method="GET" action="/transactions">
+        <label for="month">Pilih Bulan:</label>
+        <select id="month" name="month">
+            <% 
+            const monthNames = [
+                'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 
+                'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
+            ];
+            for (let i = 0; i < 12; i++) { 
+            %>
+                <option value="<%= i + 1 %>" <%= (i + 1) === parseInt(selectedMonth) ? 'selected' : '' %>>
+                    <%= monthNames[i] %>
+                </option>
+            <% } %>
+        </select>
+
+        <label for="year">Pilih Tahun:</label>
+        <select id="year" name="year">
+            <% 
+            const currentYear = new Date().getFullYear();
+            for (let y = currentYear; y >= 2000; y--) { 
+            %>
+                <option value="<%= y %>" <%= y === parseInt(selectedYear) ? 'selected' : '' %>>
+                    <%= y %>
+                </option>
+            <% } %>
+        </select>
+    </form>
+
+    <!-- Tabel transaksi -->
+    <table>
+        <thead>
+            <tr>
+                <th>Tanggal</th>
+                <th>Deskripsi</th>
+                <th>Jumlah (Rupiah)</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% transactions.forEach(transaction => { %>
+                <tr>
+                    <td><%= new Date(transaction.date).toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' }) %></td>
+                    <td><%= transaction.description %></td>
+                    <td><%= transaction.amount %></td>
+                    <td>
+                        <button type="button" onclick="location.href='/transactions/edit/<%= transaction.id %>'">Edit</button> |
+                        <form action="/transactions/delete/<%= transaction.id %>" method="POST" style="display:inline;">
+                            <button type="submit" onclick="return confirm('Hapus transaksi ini?')">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <button type="button" onclick="location.href='/transactions/add'">Tambah Transaksi Baru</button>
+    <button type="button" onclick="location.href='/landing'">Kembali ke Halaman Utama</button>
+
+</body>
+</html>
+

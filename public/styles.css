@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #C4E1F6, #A2D2DF); 
+    color: black;
+    margin: 0 20px;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: black;
+    text-align: center;
+}
+
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+
+}
+
+/* Css untuk Formulir */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    background-color:#257180;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #87A2FF;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    background-color: #fff;
+}
+
+th {
+    background-color: #789DBC;
+    color: black;
+}
+
+
+/* Gaya untuk Pesan Error dan Sukses */
+.error {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.success {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+
+

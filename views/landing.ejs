@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page - Money+</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+    <nav class="navbar animate__animated animate__bounceIn">
+        <div class="left">
+            <h1>Money+</h1>
+        </div>
+        <div class="right">
+            <ul class="list">
+                <li><a href="/transactions">Transaksi Anda</a></li>
+                <li><a href="/profile">Profil</a></li>
+                <li><a href="/auth/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main-container">
+        <h1 class="animate__animated animate__backInUp">Selamat Datang, <%= user.username %></h1>
+        <p>Jangan lupa untuk mencatat transaksi keuangan Anda dengan Money+.</p>
+    </div>
+    <div class="features">
+        <div class="feature">
+            <i class="fa fa-line-chart"></i>
+            <h3>Analisis Keuangan</h3>
+            <p>Analisis pengeluaran dan pemasukan Anda dengan mudah.</p>
+        </div>
+        <div class="feature">
+            <i class="fa fa-mobile"></i>
+            <h3>Akses Mudah</h3>
+            <p>Akses situs kami dari perangkat apapun, kapan saja.</p>
+        </div>
+        <div class="feature">
+            <i class="fa fa-lock"></i>
+            <h3>Keamanan Terjamin</h3>
+            <p>Data Anda aman bersama kami dengan protokol keamanan terbaik.</p>
+        </div>
+    </div>
+</body>
+</html>
+

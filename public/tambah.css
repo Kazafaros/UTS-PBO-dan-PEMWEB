@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #C4E1F6, #A2D2DF);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3 {
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Gaya untuk Formulir */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+    padding: 8px;
+    border: 1px solid #0D92F4;
+    border-radius: 6px;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: -3px;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+    outline: none;
+    border-color: #00c6ff;
+    box-shadow: 0 0 10px #00c6ff;
+}
+
+button {
+    width: 150px;
+    padding: 8px;
+    background-color: #257180;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    align-self: normal;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #00c6ff;
+}
+
+/* link */
+a {
+    color: #257180;
+    text-decoration: underline;
+    margin-left: 10px;
+    margin-top: 20px;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #00c6ff;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
